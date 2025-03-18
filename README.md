@@ -1,9 +1,10 @@
 ### String Calculation
 
 #### How to execute the function
-  Execute the following command in the terminal at the project location:
+  Make sure ruby is alread installed. Execute the following command in the terminal at the project location:
 
 ```Shell
+bundle install
 ruby run_calculator.rb
 ```
   Provide the comma seperated numbers
