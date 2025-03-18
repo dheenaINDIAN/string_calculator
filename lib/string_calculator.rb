@@ -1,26 +1,21 @@
+require_relative './delimiter_parser'
+require_relative './number_processor'
+
 class StringCalculator
-  def add(numbers)
-    return 0 if numbers.empty?
+  def initialize
+    @delimiter_parser = DelimiterParser.new
+    @number_processor = NumberProcessor.new
+  end
 
-    delimiter = ","
+  def add(input)
+    return 0 if input.empty?
 
-    # Check for custom delimiter at the beginning
-    if numbers.start_with?("//")
-      parts = numbers.split("\n", 2)
-      delimiter = parts[0][2..]  # Extract delimiter
-      numbers = parts[1]
-    end
+    # Parse delimiters and extract numbers
+    delimiter, numbers = @delimiter_parser.parse(input)
 
-    num_array = numbers.gsub("\n", delimiter).split(delimiter).map(&:to_i)
-
-    # Collect negative numbers
-    negatives = num_array.select { |n| n < 0 }
-
-    unless negatives.empty?
-      raise "negative numbers not allowed: #{negatives.join(', ')}"
-    end
+    # Split and process numbers
+    num_array = @number_processor.process(numbers, delimiter)
 
     num_array.sum
   end
 end
-
