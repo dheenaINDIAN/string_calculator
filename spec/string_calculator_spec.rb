@@ -23,5 +23,13 @@ RSpec.describe StringCalculator do
     it "handles whitespace around numbers" do
       expect(calculator.add(" 1 , 2 , 3 ")).to eq(6)
     end
+
+    it "handles new lines between numbers" do
+      expect(calculator.add("1\n2,3")).to eq(6)
+    end
+
+    it "handles multiple new lines and commas" do
+      expect(calculator.add("3\n4\n5,6")).to eq(18)
+    end
   end
 end

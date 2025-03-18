@@ -24,3 +24,13 @@ rspec
 
 #### Examples
 
+```Shell
+Enter comma-separated numbers:
+Sum: 0
+
+Enter comma-separated numbers: 2,4
+Sum: 6
+
+Enter comma-separated numbers: 1\n2
+Sum: 3
+```
