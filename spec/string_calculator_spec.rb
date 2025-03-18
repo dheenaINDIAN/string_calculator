@@ -31,5 +31,17 @@ RSpec.describe StringCalculator do
     it "handles multiple new lines and commas" do
       expect(calculator.add("3\n4\n5,6")).to eq(18)
     end
+
+    it "supports custom delimiters" do
+      expect(calculator.add("//;\n1;2")).to eq(3)
+    end
+
+    it "supports custom multi-character delimiters" do
+      expect(calculator.add("//***\n1***2***3")).to eq(6)
+    end
+
+    it "supports custom delimiters with new lines" do
+      expect(calculator.add("//;\n1;2\n3")).to eq(6)
+    end
   end
 end

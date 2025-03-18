@@ -33,4 +33,7 @@ Sum: 6
 
 Enter comma-separated numbers: 1\n2
 Sum: 3
+
+Enter comma-separated numbers: //;\n1;2
+Sum: 3
 ```
