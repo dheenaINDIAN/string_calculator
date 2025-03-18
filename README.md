@@ -36,4 +36,7 @@ Sum: 3
 
 Enter comma-separated numbers: //;\n1;2
 Sum: 3
+
+Enter comma-separated numbers: //;\n1;-2,-3
+RuntimeError: negative numbers not allowed: -2, -3
 ```
